@@ -1,0 +1,396 @@
+---
+swagger: "2.0"
+basePath: "/svc/search/v2"
+host: "api.nytimes.com"
+info:
+  version: "2.0.0"
+  title: "Article Search"
+  description: "Use the Article Search API to look up articles by keyword.  You can\
+    \ refine your search using filters and facets.\n\n```\n/articlesearch.json?q={query}&fq={filter}\n\
+    ```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=yourkey\n\
+    ```\n\n## FILTERING YOUR SEARCH\nUse filters to narrow the scope of your search.\
+    \ You can specify the fields and the values that your query will be filtered on.\n\
+    The Article Search API uses [Elasticsearch](https://www.elastic.co/), so the filter\
+    \ query uses standard [Lucene syntax](http://www.lucenetutorial.com/lucene-query-syntax.html).\
+    \ Separate the filter field name and value with a colon, and surround multiple\
+    \ values with parentheses.\n\n```\nfield-name:(\"value1\" \"value2\" ... \"value\
+    \ n\")\n```\n\nThe default connector for values in parentheses is OR. If you declare\
+    \ an explicit boolean value, it must be capitalized.  You can filter on multiple\
+    \ values and fields.\n\n```\nfield-name-1:(\"value1\") AND field-name-2:(\"value2\"\
+    \ \"value3\")\n```\n\nFor a list of all fields you can filter on, see the Filter\
+    \ Query Fields table below.\n\n### Pagination\nThe Article Search API returns\
+    \ a max of 10 results at a time. The meta node in the response contains the total\
+    \ number of matches (\"hits\") and the current offset. Use the page query parameter\
+    \ to paginate thru results (page=0 for results 1-10, page=1 for 11-20, ...). You\
+    \ can paginate thru up to 100 pages (1,000 results). If you get too many results\
+    \ try filtering by date range.\n\n### Filter Query Examples\nRestrict your search\
+    \ to articles with The New York Times as the source:\n\n```\nfq=source:(\"The\
+    \ New York Times\")\n```\n\nRestrict your search to articles from either the Sports\
+    \ or Foreign desk:\n\n```\nfq=news_desk:(\"Sports\" \"Foreign\")\n```\n\nRestrict\
+    \ your search to articles that are about New York City and from the Sports desk:\n\
+    \n```\nfq=news_desk:(\"Sports\") AND glocations:(\"NEW YORK CITY\")\n```\n\nIf\
+    \ you do not specify a field, the scope of the filter query will look for matches\
+    \ in the body, headline and byline. The example below will restrict your search\
+    \ to articles with The New York Times in the body, headline or byline:\n\n```\n\
+    fq=The New York Times\n```\n\n### Filter Query Fields\nField                 \
+    \    | Behavior\n------------------------- | ---------------\nbody           \
+    \           | Multiple tokens\nbody.search               | Left-edge n-grams\n\
+    creative_works            | Single token\ncreative_works.contains   | Multiple\
+    \ tokens\nday_of_week               | Single token\ndocument_type            \
+    \ | Case-sensitive exact match\nglocations                | Single token\nglocations.contains\
+    \       | Multiple tokens\nheadline                  | Multiple tokens\nheadline.search\
+    \           | Left-edge n-grams\nkicker                    | Single token\nkicker.contains\
+    \           | Multiple tokens\nnews_desk                 | Single token\nnews_desk.contains\
+    \        | Multiple tokens\norganizations             | Single token\norganizations.contains\
+    \    | Multiple tokens\npersons                   | Single token\npersons.contains\
+    \          | Multiple tokens\npub_date                  | Timestamp (YYYY-MM-DD)\n\
+    pub_year                  | Integer\nsecpg                     | Multiple tokens\n\
+    source                    | Single token\nsource.contains           | Multiple\
+    \ tokens\nsubject                   | Single token\nsubject.contains         \
+    \ | Multiple tokens\nsection_name              | Single token\nsection_name.contains\
+    \     | Multiple tokens\ntype_of_material          | Single token\ntype_of_material.contains\
+    \ | Multiple tokens\nweb_url                   | Single token (case-sensitive)\n\
+    word_count                | Integer\n\n#### News Desk Values\n* Adventure Sports\n\
+    * Arts & Leisure\n* Arts\n* Automobiles\n* Blogs\n* Books\n* Booming\n* Business\
+    \ Day\n* Business\n* Cars\n* Circuits\n* Classifieds\n* Connecticut\n* Crosswords\
+    \ & Games\n* Culture\n* DealBook\n* Dining\n* Editorial\n* Education\n* Energy\n\
+    * Entrepreneurs\n* Environment\n* Escapes\n* Fashion & Style\n* Fashion\n* Favorites\n\
+    * Financial\n* Flight\n* Food\n* Foreign\n* Generations\n* Giving\n* Global Home\n\
+    * Health & Fitness\n* Health\n* Home & Garden\n* Home\n* Jobs\n* Key\n* Letters\n\
+    * Long Island\n* Magazine\n* Market Place\n* Media\n* Men's Health\n* Metro\n\
+    * Metropolitan\n* Movies\n* Museums\n* National\n* Nesting\n* Obits\n* Obituaries\n\
+    * Obituary\n* OpEd\n* Opinion\n* Outlook\n* Personal Investing\n* Personal Tech\n\
+    * Play\n* Politics\n* Regionals\n* Retail\n* Retirement\n* Science\n* Small Business\n\
+    * Society\n* Sports\n* Style\n* Sunday Business\n* Sunday Review\n* Sunday Styles\n\
+    * T Magazine\n* T Style\n* Technology\n* Teens\n* Television\n* The Arts\n* The\
+    \ Business of Green\n* The City Desk\n* The City\n* The Marathon\n* The Millennium\n\
+    * The Natural World\n* The Upshot\n* The Weekend\n* The Year in Pictures\n* Theater\n\
+    * Then & Now\n* Thursday Styles\n* Times Topics\n* Travel\n* U.S.\n* Universal\n\
+    * Upshot\n* UrbanEye\n* Vacation\n* Washington\n* Wealth\n* Weather\n* Week in\
+    \ Review\n* Week\n* Weekend\n* Westchester\n* Wireless Living\n* Women's Health\n\
+    * Working\n* Workplace\n* World\n* Your Money\n\n#### Section Name Values\n* Arts\n\
+    * Automobiles\n* Autos\n* Blogs\n* Books\n* Booming\n* Business\n* Business Day\n\
+    * Corrections\n* Crosswords & Games\n* Crosswords/Games\n* Dining & Wine\n* Dining\
+    \ and Wine\n* Editors' Notes\n* Education\n* Fashion & Style\n* Food\n* Front\
+    \ Page\n* Giving\n* Global Home\n* Great Homes & Destinations\n* Great Homes and\
+    \ Destinations\n* Health\n* Home & Garden\n* Home and Garden\n* International\
+    \ Home\n* Job Market\n* Learning\n* Magazine\n* Movies\n* Multimedia\n* Multimedia/Photos\n\
+    * N.Y. / Region\n* N.Y./Region\n* NYRegion\n* NYT Now\n* National\n* New York\n\
+    * New York and Region\n* Obituaries\n* Olympics\n* Open\n* Opinion\n* Paid Death\
+    \ Notices\n* Public Editor\n* Real Estate\n* Science\n* Sports\n* Style\n* Sunday\
+    \ Magazine\n* Sunday Review\n* T Magazine\n* T:Style\n* Technology\n* The Public\
+    \ Editor\n* The Upshot\n* Theater\n* Times Topics\n* TimesMachine\n* Today's Headlines\n\
+    * Topics\n* Travel\n* U.S.\n* Universal\n* UrbanEye\n* Washington\n* Week in Review\n\
+    * World\n* Your Money\n\n#### Type of Material Values\n* Addendum\n* An Analysis\n\
+    * An Appraisal\n* Archives\n* Article\n* Banner\n* Biography\n* Birth Notice\n\
+    * Blog\n* Brief\n* Caption\n* Chronology\n* Column\n* Correction\n* Economic Analysis\n\
+    * Editorial\n* Editorial Cartoon\n* Editors' Note\n* First Chapter\n* Front Page\n\
+    * Glossary\n* Interactive Feature\n* Interactive Graphic\n* Interview\n* Letter\n\
+    * List\n* Marriage Announcement\n* Military Analysis\n* News\n* News Analysis\n\
+    * Newsletter\n* Obituary\n* Obituary (Obit)\n* Op-Ed\n* Paid Death Notice\n* Postscript\n\
+    * Premium\n* Question\n* Quote\n* Recipe\n* Review\n* Schedule\n* SectionFront\n\
+    * Series\n* Slideshow\n* Special Report\n* Statistics\n* Summary\n* Text\n* Video\n\
+    * Web Log\n\n## USING FACETS\nUse facets to view the relative importance of certain\
+    \ fields to a search term, and gain insight about how to best refine your queries\
+    \ and filter your search results.\n\nThe following fields can be used as facet\
+    \ fields: day_of_week, document_type, ingredients, news_desk, pub_month, pub_year,\
+    \ section_name, source, subsection_name, and type_of_material.\n\nSpecify facets\
+    \ using the facet_fields parameter. Set facet=true and the response will contain\
+    \ an array with a count for the five terms that have the highest count for each\
+    \ facet. For example, including the following in your request will add a facet\
+    \ array with a count for the top five days of the week to the response.\n\n```\n\
+    facet_fields=day_of_week&facet=true\n```\n\nBy default, facet counts ignore all\
+    \ filters and return the count for all results of a query. For the following queries,\
+    \ the facet count in each response will be identical, even though the results\
+    \ returned in one set is restricted to articles published in 2012.\n\n```\nq=obama&facet_fields=source&facet=true&begin_date=20120101&end_date=20121231\n\
+    ```\n\nYou can force facet counts to respect filters by setting facet_filter=true.\
+    \ Facet counts will be restricted based on any filters you have specified (this\
+    \ includes both explicit filter queries set using the fq parameter and implicit\
+    \ filters like begin_date).\n\nHere is the facet array response to the query.\n\
+    ```javascript\n\"facets\": {\n  \"source\": {\n    \"_type\": \"terms\",\n   \
+    \ \"missing\": 524,\n    \"total\": 83121,\n    \"other\": 317,\n    \"terms\"\
+    : [\n      {\n        \"term\": \"The New York Times\",\n        \"count\": 68530\n\
+    \      },\n      {\n        \"term\": \"AP\",\n        \"count\": 7705\n     \
+    \ },\n      {\n        \"term\": \"Reuters\",\n        \"count\": 4969\n     \
+    \ },\n      {\n        \"term\": \"International Herald Tribune\",\n        \"\
+    count\": 1464\n      },\n      {\n        \"term\": \"\",\n        \"count\":\
+    \ 136\n      }\n    ]\n  }\n}\n```\nIf you set facet_filter to true the facet\
+    \ array will only count facet occurences in 2012.\n```javascript\nfacets\": {\n\
+    \  \"source\": {\n    \"_type\": \"terms\",\n    \"missing\": 192,\n    \"total\"\
+    : 22596,\n    \"other\": 139,\n    \"terms\": [\n      {\n        \"term\": \"\
+    The New York Times\",\n        \"count\": 14812\n      },\n      ...\n```\n###\
+    \ Examples Requests\nSearch for documents containing 'new york times' and return\
+    \ results 20-29 with results sorted oldest first.\n\n```\nhttps://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&page=2&sort=oldest&api-key=your-api-key\n\
+    ```\nSearch for all documents published on January 1, 2012 containing 'romney'.\
+    \  Facet count will be returned for 'day_of_week' and will be reflective of all\
+    \ documents (i.e., the date range filter and filter query do not affect facet\
+    \ counts).\n\n```\nhttps://api.nytimes.com/svc/search/v2/articlesearch.json?fq=romney&facet_field=day_of_week&facet=true&begin_date=20120101&end_date=20120101&api-key=your-api-key\n\
+    ```\n\n### Example Response\nHere is an partial example response.\n\n```javascript\n\
+    {\n  \"response\": {\n    \"meta\": {\n      \"hits\": 25,\n      \"time\": 332,\n\
+    \      \"offset\": 0\n    },\n    \"docs\": [\n      {\n        \"web_url\": \"\
+    http://thecaucus.blogs.nytimes.com/2012/01/01/virginia-attorney-general-backs-off-ballot-proposal/\"\
+    ,\n        \"snippet\": \"Virginia's attorney general on Sunday backed off of\
+    \ a proposal to loosen the state's ballot access rules to allow more Republican\
+    \ presidential candidates to qualify.\",\n        \"lead_paragraph\": \"DES MOINES\
+    \ -- Virginia's attorney general on Sunday backed off of a proposal to loosen\
+    \ the state's ballot access rules to allow more Republican presidential candidates\
+    \ to qualify.\",\n        ...\n      }\n    ],\n    \"facets\": {\n        \"\
+    day_of_week\": {\n            \"_type\": \"terms\",\n            \"missing\":\
+    \ 1871790,\n            \"total\": 13098462,\n            \"other\": 3005891,\n\
+    \            \"terms\": [\n              {\n                \"term\": \"Sunday\"\
+    ,\n                \"count\": 3122347\n              },\n              ...\n```\n\
+    \n### Limit Fields in Response\nYou can limit the number fields returned in the\
+    \ response with the fl parameter.\n```\nfl=web_url\n```\n"
+schemes:
+- "https"
+produces:
+- "application/json"
+security:
+- apikey: []
+paths:
+  /articlesearch.json:
+    get:
+      summary: "Returns an array of articles."
+      description: "Search for NYT articles by keywords, filters and facets."
+      parameters:
+      - name: "begin_date"
+        in: "query"
+        description: "Begin date (e.g. 20120101)"
+        required: false
+        type: "string"
+        pattern: "^\\d{8}$"
+      - name: "end_date"
+        in: "query"
+        description: "End date (e.g. 20121231)"
+        required: false
+        type: "string"
+        pattern: "^\\d{8}$"
+      - name: "facet"
+        in: "query"
+        description: "Whether to show facet counts"
+        required: false
+        type: "string"
+        enum:
+        - false
+        - true
+      - name: "facet_fields"
+        in: "query"
+        description: "Facets"
+        required: false
+        type: "string"
+        enum:
+        - "day_of_week"
+        - "document_type"
+        - "ingredients"
+        - "news_desk"
+        - "pub_month"
+        - "pub_year"
+        - "section_name"
+        - "source"
+        - "subsection_name"
+        - "type_of_material"
+      - name: "facet_filter"
+        in: "query"
+        description: "Have facet counts use filters"
+        required: false
+        type: "string"
+        enum:
+        - false
+        - true
+      - name: "fl"
+        in: "query"
+        description: "Field list"
+        required: false
+        type: "string"
+      - name: "fq"
+        in: "query"
+        description: "Filter query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        description: "Page number (0, 1, ...)"
+        required: false
+        minimum: 0
+        maximum: 100
+        type: "integer"
+      - name: "q"
+        in: "query"
+        description: "Query"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        description: "Sort order"
+        required: false
+        type: "string"
+        enum:
+        - "newest"
+        - "oldest"
+        - "relevance"
+      tags:
+      - "Search"
+      responses:
+        "200":
+          description: "An array of articles."
+          schema:
+            type: "object"
+            properties:
+              status:
+                type: "string"
+              copyright:
+                type: "string"
+              response:
+                type: "object"
+                properties:
+                  docs:
+                    type: "array"
+                    items:
+                      $ref: "#/definitions/Article"
+                  meta:
+                    type: "object"
+                    properties:
+                      hits:
+                        type: "integer"
+                      offset:
+                        type: "integer"
+                      time:
+                        type: "integer"
+        "401":
+          description: "Unauthorized request.  Make sure api-key is set."
+        "429":
+          description: "Too many requests.  You reached your per minute or per day\
+            \ rate limit."
+definitions:
+  Article:
+    type: "object"
+    properties:
+      web_url:
+        type: "string"
+      snippet:
+        type: "string"
+      print_page:
+        type: "integer"
+      source:
+        type: "string"
+      multimedia:
+        type: "array"
+        items:
+          $ref: "#/definitions/Multimedia"
+      headline:
+        $ref: "#/definitions/Headline"
+      keywords:
+        type: "array"
+        items:
+          $ref: "#/definitions/Keyword"
+      pub_date:
+        type: "string"
+      document_type:
+        type: "string"
+      news_desk:
+        type: "string"
+      byline:
+        $ref: "#/definitions/Byline"
+      type_of_material:
+        type: "string"
+      _id:
+        type: "string"
+      word_count:
+        type: "integer"
+      score:
+        type: "integer"
+      uri:
+        type: "string"
+  Byline:
+    type: "object"
+    properties:
+      original:
+        type: "string"
+      person:
+        type: "array"
+        items:
+          $ref: "#/definitions/Person"
+      organization:
+        type: "string"
+  Headline:
+    type: "object"
+    properties:
+      main:
+        type: "string"
+      kicker:
+        type: "string"
+      content_kicker:
+        type: "string"
+      print_headline:
+        type: "string"
+      name:
+        type: "string"
+      seo:
+        type: "string"
+      sub:
+        type: "string"
+  Keyword:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      value:
+        type: "string"
+      rank:
+        type: "integer"
+      major:
+        type: "string"
+  Multimedia:
+    type: "object"
+    properties:
+      rank:
+        type: "integer"
+      subtype:
+        type: "string"
+      caption:
+        type: "string"
+      credit:
+        type: "string"
+      type:
+        type: "string"
+      url:
+        type: "string"
+      height:
+        type: "integer"
+      width:
+        type: "integer"
+      legacy:
+        type: "object"
+        properties:
+          xlarge:
+            type: "string"
+          xlargewidth:
+            type: "integer"
+          xlargeheight:
+            type: "integer"
+      crop_name:
+        type: "string"
+  Person:
+    type: "object"
+    properties:
+      firstname:
+        type: "string"
+      middlename:
+        type: "string"
+      lastname:
+        type: "string"
+      qualifier:
+        type: "string"
+      title:
+        type: "string"
+      role:
+        type: "string"
+      organization:
+        type: "string"
+      rank:
+        type: "integer"
+securityDefinitions:
+  apikey:
+    type: "apiKey"
+    name: "api-key"
+    in: "query"
