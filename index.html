@@ -5,12 +5,157 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  
+ <style>
+ body, html {
+  height: 100%;
+}
+
+.bg {
+  
+  background-image: url("./Assets/girlrun.jpeg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header {
+  text-align: center;
+  color: yellow;
+  background-color: black;
+  font-size: 80px;
+  padding: 0;
+  margin: 0;
+}
+.choose-food {
+  background-color: black;
+color: yellow;
+font-size: 30px;
+}
+#foods {
+  
+  
+  font-size: 30px;
+  background-color: black;
+  color: yellow;
+  
+}
+
+.submit {
  
+  font-size: 30px;
+  border-radius: 15%;
+  background-color: black;
+  color:yellow;
+ 
+}
+.submit:hover {
+  background-color: white;
+  color: black;
+}
+table, th, td {
+  border-spacing: 5px;
+  padding: 15px;
+  border: 3px solid black;
+  font-weight: 3px;
+  font-style: bold;
+ 
+}
+
+#calories {
+  text-align: center;
+  font-size: 20px;
+  background-color: yellow;
+  color: black;
+}
+   
+ </style>
 </head>
 <body>
  
- <p>Hello -from Nikki</p>
-   <h1> Remington is here</h1>
+<div class="bg";>
+
+  <header>Belly Budget</header>
+<br>
+<h2>Choose from the options below</h2>
+
+<div class = "food-select">
+ 
+<form action="/action_page.php">
+  <label for="foods" class="choose-food">Choose a food type:</label>
+  <select id="foods" name="food-type">
+    <option value="beverage">Beverage</option>
+    <option value="sweets">Sweets</option>
+    <option value="entree">Entree</option>
+    <option value="snacks">Snacks</option>
+  </select>
+</form>
+<br>
+<form>
+  <label for="foods" class="choose-food">Choose a food type:</label>
+  <select id="foods" name="food-type">
+    <option value="beverage">Beverage</option>
+    <option value="sweets">Sweets</option>
+    <option value="entree">Entree</option>
+    <option value="snacks">Snacks</option>
+  </select>
+</form>
+<br>
+<form>
+  <label for="foods" class="choose-food">Choose a food type:</label>
+  <select id="foods" name="food-type">
+    <option value="beverage">Beverage</option>
+    <option value="sweets">Sweets</option>
+    <option value="entree">Entree</option>
+    <option value="snacks">Snacks</option>
+  </select>
+</form>
+<br>
+<form>
+  <label for="foods" class="choose-food">Choose a food type:</label>
+  <select id="foods" name="food-type">
+    <option value="beverage">Beverage</option>
+    <option value="sweets">Sweets</option>
+    <option value="entree">Entree</option>
+    <option value="snacks">Snacks</option>
+  </select><br>
+  <input class = "submit" type="submit">
+</form>
+</div>
+
+<br><br><br><br><br>
+
+<table style="width:70%">
+  <tr>
+    <th id="calories" colspan= 4;>Total Calories Consumed: </th>
+    
+  </tr>
+  <tr>
+    <td>Fat: </td>
+    <td>Carbs: </td>
+    <td>Fiber: </td>
+    <td>Protein: </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+ 
+
  
 </body>
 </html>
