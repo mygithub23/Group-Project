@@ -9,20 +9,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <!--LINKING CSS FILES-->    
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
-    
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css"> 
 </head>
 <body>
     <!--NAVIGATION AND HEADER-->
     <div class="row">
         <div class="col s12 m12 l12">
            <nav>
-              <div class = "nav-wrapper yellow">
-                 <a href = "#" class = "brand-logo left black-text">BELLY Budget</a>
-                 <ul id="nav-mobile " class ="right hide-on-med-and-down">
-                    <li><a href="#" class= "black-text">Food</a></li>
-                    <li><a href="#" class= "black-text">Home</a></li>
+              <div class="nav-wrapper yellow">
+                 <a href="#" class="brand-logo left black-text">BELLY Budget</a>
+                 <ul id="nav-mobile " class="right hide-on-med-and-down">
+                    <li><a href="#" class="black-text">Food</a></li>
+                    <li><a href="#" class="black-text">Home</a></li>
                  </ul>
               </div>
            </nav>
@@ -30,78 +29,64 @@
     </div>  
 
     <div class="row">
-        <div class="col s5 m5 l5">
-            <h1>Calories to Burn</h1>
-            <h2>1000 calories</2>
+        <div class="col s6 m6 l6">
+            <div class="calories-to-burn center-align grey lighten-1">
+                <h1>Calories to Burn</h1>
+                <h2>1000 calories</h2>
+            </div>
+          
+            <div class="time center-align grey lighten-1">
+                <h1>Time to Exercise</h1>
+                <h2>20 minutes</h2>
+            </div>
         </div>
 
         <div class="row">
-            <form class="col s7 m7 l7">
+            <form class="col s6 m6 l6">
                 <div class="row">
-                    <div class="input-field col s7 m7 l7">
+                    <div class="input-field col s6 m6 l6">
                         <input placeholder="18 years old" id="age" type="number" class="active validate" required/>
                         <label for="age">Age</label>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="input-field col s7 m7 l7">      
+                    <div class="input-field col s6 m6 l6">      
                         <label for="weight">Weight</label>
                         <input id="weight" type="number" placeholder="110 lbs" class="validate" required/>          
                      </div>
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s7 m7 l7">      
+                    <div class="input-field col s6 m7 l6">      
                         <label for="height">Height</label>
                         <input id="height" type="text" placeholder="5'2" class="validate" required/>          
                      </div>
                 </div>
 
                 <div class="row">
-                    <div class="col s7 m7 l7">
+                    <div class="col s6 m6 l6">
                         <label for="gender">Gender</label>
                         <p>
                             <input id="male" type="radio" name="gender" value="male" checked/>
-                            <label for ="male">Male</label>
-                              <input id="female" type="radio" name="gender" value = "female" checked/>
+                            <label for="male">Male</label>
+                              <input id="female" type="radio" name="gender" value="female" checked/>
                               <label for="female">Female</label>
-                          </p>
+                        </p>
                     </div>
                 </div>           
                 
                 <div class="row">
-                   <div class="input-field col s7 m7 l7">
+                   <div class="input-field col s6 m6 l6">
                       <input placeholder="Running, Swimming, Biking, etc." id="exercise" type="text" class="validate" required/>
                       <label for="exercise">Exercise</label>
                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col s7 m7 l7">
-                        <label for="time">Time of Exercise (in minutes)</label> 
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s7 m7 l7">
-                        <input id="time" type="range" min="1" max="120" class="validate" required/>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col s7 m7 l7">
-                        Calories Burn
-                        <br>
-                        <h2>1500 calories</h2>
-                    </div>
                 </div>
     
             </form>       
         </div>
     </div>
 
-    <!--NAVIGATION AND HEADER-->
     <footer class="page-footer yellow">    
         <div class="footer-copyright black-text">
             <div class="container">
