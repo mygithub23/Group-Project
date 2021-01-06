@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--FEEL FREE TO CHANGE THE TITLE ACCORDINGLY TO REFLECT YOUR PAGE (BELLY Budget:Home or Food)-->
+    <!--FEEL FREE TO CHANGE THE TITLE ACCORDINGLY TO REFLECT YOUR PAGE (BELLY Budget:Home or Food)-->
     <title>BELLY Budget: Home</title>
-<!--LINKING MATERIALIZE CSS FRAMEWORK-->
+    <!--LINKING MATERIALIZE CSS FRAMEWORK-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-<!--LINKING CSS FILES-->    
+    <!--LINKING CSS FILES-->
     <link rel="stylesheet" href="/css/reset.css">
     <style>
         img {
@@ -16,186 +17,186 @@
             height: 200px;
         }
 
-        button {
-            background-color:#BD897E;
-            border-radius: 5px;
-        }
-        button:hover{
-            background-color: white;
-           
-        }
-        a{
+        a {
             color: white;
-        }
-        a:hover {
-            color:#BD897E;
         }
     </style>
 
 </head>
+
 <body>
-<!--NAVIGATION AND HEADER-->
+    <!--NAVIGATION AND HEADER-->
     <div class="row">
         <div class="col s12 m12 l12">
-           <nav>
-              <div class = "nav-wrapper yellow">
-                 <a href = "#" class = "brand-logo left black-text">BELLY Budget</a>
-                 <ul id="nav-mobile" class ="right hide-on-med-and-down">
-                    <li><a href="#" class = "black-text">Food</a></li>
-                    <li><a href="HTML/exercise.html" class = "black-text">Exercise</a></li>
-                 </ul>
-              </div>
-           </nav>
+            <nav>
+                <div class="nav-wrapper yellow">
+                    <a href="#" class="brand-logo left black-text">BELLY Budget</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="rem-food.html" class="black-text">Food</a></li>
+                        <li><a href="exercise.html" class="black-text">Exercise</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </div>  
-<!--THIS IS WHERE YOU CAN ADD YOUR CONTENT-->
+    </div>
+    <!--THIS IS WHERE YOU CAN ADD YOUR CONTENT-->
 
 
-<!--  Card for Intro to Belly Budget with description -->
-    <div class = "intro" style = "border: 2px solid white; background-color: #BD897E; color: white;">
+    <!--  Card for Intro to Belly Budget with description -->
+    <div class="intro" style="border: 2px solid white; background-color: grey; color: white;">
         <div class="row">
-       <div class="col s12 m12 l12">
-        <h3 style="text-align: center">Welcome to Belly Budget!</h3>
+            <div class="col s12 m12 l12">
+                <h3 style="text-align: center">Welcome to Belly Budget!</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col s6 m6 l6" style="padding: 40px;">
+                <h4>Why BELLY Budget? </h4>
+                <p style="padding-right: 40%;">Do you often ask yourself am I working out enough to work off what I just
+                    ate? How many calorie is this slice of cake?
+                    How long should I be on the treadmill to work off 400 calories?
+                    If you find yourself asking those type of questions then this application is for you.
+                    Simply type in the type of food you're about to eat (or thinking of eating) to see its calorie
+                    count.
+                    Stop there or continue to see recommendations on the type of exercises and how long you should be
+                    doing them to burn off the unwanted calories. </p>
+            </div>
+
+            <div class="col s6 m6 l6" style="padding: 40px;">
+                <h4> This application is perfect for those who: </h4>
+
+                <div class="col s6 m6 l6">
+                    <!-- Unordered list with styles that aren't working... can't get bullets to display-->
+                    <ul style="list-style-type: circle; padding-left: 5%;">
+                        <li>Count calories</li>
+                        <li>Have a desire to loose weight</li>
+                        <li>Wish to maintain a healthy lifestyle</li>
+                        <li>Are just curious </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class =" col s6 m6 l6" style="padding: 40px;" >
-       <h4>Why BELLY Budget? </h4>
-       <p style="padding-right: 40%;">Do you often ask yourself am I working out enough to work off what I just ate? How many calorie is this slice of cake? 
-           How long should I be on the treadmill to work off 400 calories? 
-           If you find yourself asking those type of questions then this application is for you. 
-           Simply type in the type of food you're about to eat (or thinking of eating) to see its calorie count. 
-           Stop there or continue to see recommendations on the type of exercises and how long you should be doing them to burn off the unwanted calories. </p>
-       </div>
 
-       <div class="col s6 m6 l6" style="padding: 40px;">
-          <h4 > This application is perfect for those who: </h4>
-          
-          <div class="col s6 m6 l6">
-           <!-- Unordered list with styles that aren't working... can't get bullets to display-->
-            <ul style="list-style-type: circle; padding-left: 5%;">          
-            <li>Count calories</li>
-            <li>Have a desire to loose weight</li>
-            <li>Wish to maintain a healthy lifestyle</li>
-            <li>Are just curious </li>
-            </ul>
-            </div>
-        
 
-        
-    </div>
-    </div>
-    </div>
-    
- 
     <!--  Div for 2 instruction cards -->
-    <div class = "row" >
+    <div class="row">
         <!-- Card for instructions for how to use Food page-->
-       <div class = "col s6 m6 l6" style="border: 2px solid white; background-color: #F4B9B2; color: white;" >
-        <h4>Food Page Instructions</h4>
-          <ol>
-              <li>Click on "Food" at the top right of the page to enter food information</li>
-              <li>Type all the foods you wish to calculate into the search bar</li>
-              <li> Enter the serving number</li>
-              <li> Hit enter for the food information </li>
-              <li>Use calories amount to calculate your exercises!</li>
-              </ol>
+        <div class="col s6 m6 l6" style="border: 2px solid white; background-color: #F6E417; color: grey;">
+            <h4>Food Page Instructions</h4>
+            <ol>
 
-              <!-- Button for if we want to add demo gif-->
-              <button><a href="rem-food.html">Click here to get started</a></button>
-       </div>
-       <!-- Card for instructions on how to use Exercise Page-->
-       <div class = "col s6 m6 l6" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-        <h4>Exercise Page Instructions</h4>
-        <ol>
-            <li> Click on "Exercise" at the top of the page</li>
-            <li>Enter your age, sex, and weight</li>
-            <li>Select the type of exercise you wish to do</li>
-            <li>Use the slide bar to adjust the time spent doing the exercise</li>
-            <li>Compare the "calories burned" to the calories consumed</li>
-        </ol>
+                <li>Type all the foods you want to eat into the search bar</li>
+                <li> Enter the serving number</li>
+                <li> Click the "calculate" button find out the calories </li>
+                <li>Use calories amount to pick your exercises!</li>
+            </ol>
 
-        <!-- Button for if we want to add demo gif-->
-        <button><a href="exercise.html">Click here to get started</a> </button>
+            <!-- Button for if we want to add demo gif-->
 
-       </div>
+
+
+            <button class="btn"><a href="rem-food.html">Click here to get started</a></button>
+
+        </div>
+        <!-- Card for instructions on how to use Exercise Page-->
+        <div class="col s6 m6 l6" style="border: 2px solid white; background-color: #F6E417; color: grey;">
+            <h4>Exercise Page Instructions</h4>
+            <ol>
+                <li> Enter your age, weight, height, and gender</li>
+                <li>Type in the type of exercise you wish to do</li>
+                <li>Use the slide bar to adjust the time spent doing the exercise</li>
+                <li>Compare the "calories burned" to the calories consumed</li>
+            </ol>
+
+            <!-- Button for if we want to add demo gif-->
+
+
+            <button class="btn"><a href="exercise.html">Click here to get started</a> </button>
+
+
+        </div>
     </div>
 
-   <!-- Div for images and headings-->
-   <div style="background-color: #F4B9B2">
-   
-    <!-- Div for image headings-->
-        
-<div class = "row" >
-    
-    <!-- Card for treadmill gif heading-->
+    <!-- Div for images and headings-->
+    <div style="background-color: grey">
 
-<div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-   <p>You can eat what you want as long as you work it off!</p>
- </div>
+        <!-- Div for image headings-->
 
- <!-- Card for motivational quote image heading-->
- <div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;"> 
-    <p>Nothing comes easy, but you can do it!  Persist!</p>
- </div>
- <!-- Card for exercise motivation image hading-->
- <div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-    <p>Try new exercises to invigorate your mind and body</p>
- </div>
- <!-- Card for exercise motivation image hading-->
- <div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-    <p>Feel good about what you see on the scale!</p>
- </div>
-</div>
+        <div class="row">
 
+            <!-- Card for treadmill gif heading-->
 
-<!-- Div for insparational quotes, images, gifs 4 cards-->
-<div class = "row" >
-    
-    <!-- Card for treadmill gif-->
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <p>You can eat what you want as long as you work it off!</p>
+            </div>
 
-<div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-<img src="../Assets/treadmill.gif">
-</div>
-
- <!-- Card for motivational quote image-->
- <div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-<img src="../Assets/quote.jpeg">
-</div>
- <!-- Card for exercise motivation image-->
- <div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-    <img src="../Assets/girlrun.jpeg">
- </div>
+            <!-- Card for motivational quote image heading-->
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <p>Nothing comes easy, but you can do it! Persist!</p>
+            </div>
+            <!-- Card for exercise motivation image hading-->
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <p>Try new exercises to invigorate your mind and body</p>
+            </div>
+            <!-- Card for exercise motivation image hading-->
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <p>Feel good about what you see on the scale!</p>
+            </div>
+        </div>
 
 
- <!-- Card for exercise motivation image-->
- <div class = "col s3 m3 l3" style="border: 2px solid white; background-color: #F4B9B2; color: white;">  
-    <img src="../Assets/scale.jpg">
- </div>
- </div>
-</div>
+        <!-- Div for insparational quotes, images, gifs 4 cards-->
+        <div class="row">
+
+            <!-- Card for treadmill gif-->
+
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <img src="../Assets/treadmill.gif">
+            </div>
+
+            <!-- Card for motivational quote image-->
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <img src="../Assets/quote.jpeg">
+            </div>
+            <!-- Card for exercise motivation image-->
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <img src="../Assets/girlrun.jpeg">
+            </div>
 
 
+            <!-- Card for exercise motivation image-->
+            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
+                <img src="../Assets/scale.jpg">
+            </div>
+        </div>
+    </div>
 
 
 
 
-<!--NAVIGATION AND HEADER-->
-    <footer class="page-footer yellow">    
+
+
+    <!--NAVIGATION AND HEADER-->
+    <footer class="page-footer yellow" style=“position:fixed;bottom:0;left:0;width:100%;“>
         <div class="footer-copyright">
             <div class="container black-text">
-              © 2020 Copyright Information
+                © 2020 Copyright Information
             </div>
-        </div>         
+        </div>
     </footer>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>  
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, options);
-  });
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems, options);
+        });
     </script>
 </body>
+
 </html>
