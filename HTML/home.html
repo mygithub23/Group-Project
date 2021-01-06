@@ -9,8 +9,6 @@
     <!--LINKING MATERIALIZE CSS FRAMEWORK-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-    <!--LINKING CSS FILES-->
-    <link rel="stylesheet" href="/css/reset.css">
     <style>
         img {
             width: 100%;
@@ -19,6 +17,10 @@
 
         a {
             color: white;
+        }
+
+        li {
+            list-style-position: inside;
         }
     </style>
 
@@ -32,92 +34,79 @@
                 <div class="nav-wrapper yellow">
                     <a href="#" class="brand-logo left black-text">BELLY Budget</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="rem-food.html" class="black-text">Food</a></li>
-                        <li><a href="exercise.html" class="black-text">Exercise</a></li>
+                        <li><a href="./food.html" class="black-text">Food</a></li>
+                        <li><a href="./exercise.html" class="black-text">Exercise</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
-    <!--THIS IS WHERE YOU CAN ADD YOUR CONTENT-->
 
 
     <!--  Card for Intro to Belly Budget with description -->
     <div class="intro" style="border: 2px solid white; background-color: grey; color: white;">
         <div class="row">
             <div class="col s12 m12 l12">
-                <h3 style="text-align: center">Welcome to Belly Budget!</h3>
+                <h3 style="text-align: center">Welcome to BELLY Budget!</h3>
             </div>
         </div>
         <div class="row">
-            <div class=" col s6 m6 l6" style="padding: 40px;">
-                <h4>Why BELLY Budget? </h4>
-                <p style="padding-right: 40%;">Do you often ask yourself am I working out enough to work off what I just
+            <div class=" col s6 m6 l6">
+                <h4>Why BELLY Budget?</h4>
+                <blockquote>
+                    Do you often ask yourself am I working out enough to work off what I just
                     ate? How many calorie is this slice of cake?
                     How long should I be on the treadmill to work off 400 calories?
                     If you find yourself asking those type of questions then this application is for you.
                     Simply type in the type of food you're about to eat (or thinking of eating) to see its calorie
                     count.
                     Stop there or continue to see recommendations on the type of exercises and how long you should be
-                    doing them to burn off the unwanted calories. </p>
+                    doing them to burn off the unwanted calories.
+                </blockquote>
             </div>
 
-            <div class="col s6 m6 l6" style="padding: 40px;">
-                <h4> This application is perfect for those who: </h4>
-
-                <div class="col s6 m6 l6">
-                    <!-- Unordered list with styles that aren't working... can't get bullets to display-->
-                    <ul style="list-style-type: circle; padding-left: 5%;">
-                        <li>Count calories</li>
-                        <li>Have a desire to loose weight</li>
-                        <li>Wish to maintain a healthy lifestyle</li>
-                        <li>Are just curious </li>
-                    </ul>
-                </div>
-
-
-
+            <div class="col s6 m6 l6">
+                <h4> This application is perfect for those who:</h4>
+                    <blockquote>
+                        <ul>
+                            <li>&#128170; Count calories</li>
+                            <li>&#128170; Have a desire to loose weight</li>
+                            <li>&#128170; Wish to maintain a healthy lifestyle</li>
+                            <li>&#128170; Are just curious </li>
+                        </ul>
+                    </blockquote> 
             </div>
         </div>
     </div>
 
 
     <!--  Div for 2 instruction cards -->
-    <div class="row">
+    <div class="row center-align">
         <!-- Card for instructions for how to use Food page-->
         <div class="col s6 m6 l6" style="border: 2px solid white; background-color: #F6E417; color: grey;">
             <h4>Food Page Instructions</h4>
             <ol>
 
-                <li>Type all the foods you want to eat into the search bar</li>
-                <li> Enter the serving number</li>
-                <li> Click the "calculate" button find out the calories </li>
+                <li>Type all the foods and servings you want to eat into the search bar</li>
+                <li> Click the "Submit" button find out the calories </li>
                 <li>Use calories amount to pick your exercises!</li>
             </ol>
 
             <!-- Button for if we want to add demo gif-->
-
-
-
-            <button class="btn"><a href="rem-food.html">Click here to get started</a></button>
-
+            <button class="btn"><a href="./food.html">Click here to get started</a></button><br><br><br>
         </div>
         <!-- Card for instructions on how to use Exercise Page-->
         <div class="col s6 m6 l6" style="border: 2px solid white; background-color: #F6E417; color: grey;">
             <h4>Exercise Page Instructions</h4>
             <ol>
-                <li> Enter your age, weight, height, and gender</li>
+                <li>Enter your age, weight, height, and gender</li>
                 <li>Type in the type of exercise you wish to do</li>
                 <li>Use the slide bar to adjust the time spent doing the exercise</li>
                 <li>Compare the "calories burned" to the calories consumed</li>
             </ol>
 
             <!-- Button for if we want to add demo gif-->
-
-
-            <button class="btn"><a href="exercise.html">Click here to get started</a> </button>
-
-
+            <button class="btn"><a href="./exercise.html">Click here to get started</a> </button><br><br>
         </div>
     </div>
 
@@ -130,21 +119,21 @@
 
             <!-- Card for treadmill gif heading-->
 
-            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
-                <p>You can eat what you want as long as you work it off!</p>
+            <div class="col s3 m3 l3 center-align" style="border: 2px solid white; background-color: grey; color: white;">
+                <h5>You can eat what you want as long as you work it off!</h5>
             </div>
 
             <!-- Card for motivational quote image heading-->
-            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
-                <p>Nothing comes easy, but you can do it! Persist!</p>
+            <div class="col s3 m3 l3 center-align" style="border: 2px solid white; background-color: grey; color: white;">
+                <h5>Nothing comes easy, but you can do it! Persist!</h5>
             </div>
-            <!-- Card for exercise motivation image hading-->
-            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
-                <p>Try new exercises to invigorate your mind and body</p>
+            <!-- Card for exercise motivation image heading-->
+            <div class="col s3 m3 l3 center-align" style="border: 2px solid white; background-color: grey; color: white;">
+                <h5>Try new exercises to invigorate your mind and body</h5>
             </div>
-            <!-- Card for exercise motivation image hading-->
-            <div class="col s3 m3 l3" style="border: 2px solid white; background-color: grey; color: white;">
-                <p>Feel good about what you see on the scale!</p>
+            <!-- Card for exercise motivation image heading-->
+            <div class="col s3 m3 l3 center-align" style="border: 2px solid white; background-color: grey; color: white;">
+                <h5>Feel good about what you see on the scale!</h5>
             </div>
         </div>
 
@@ -173,15 +162,11 @@
                 <img src="../Assets/scale.jpg">
             </div>
         </div>
-    </div>
-
-
-
-
+    </div><br><br><br>
 
 
     <!--NAVIGATION AND HEADER-->
-    <footer class="page-footer yellow" style=“position:fixed;bottom:0;left:0;width:100%;“>
+    <footer class="page-footer yellow" style="position:fixed;bottom:0;left:0;width:100%;">
         <div class="footer-copyright">
             <div class="container black-text">
                 © 2020 Copyright Information
