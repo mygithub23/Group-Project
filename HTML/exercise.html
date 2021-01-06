@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--FEEL FREE TO CHANGE THE TITLE ACCORDINGLY TO REFLECT YOUR PAGE (BELLY Budget:Home or Food)-->
-    <title>BELLY Budget: Home</title>
+    <title>BELLY Budget: Exercise</title>
     <!--LINKING MATERIALIZE CSS FRAMEWORK-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-    <!--LINKING CSS FILES-->    
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css"> 
 </head>
 <body>
     <!--NAVIGATION AND HEADER-->
@@ -20,8 +16,8 @@
               <div class="nav-wrapper yellow">
                  <a href="#" class="brand-logo left black-text">BELLY Budget</a>
                  <ul id="nav-mobile " class="right hide-on-med-and-down">
-                    <li><a href="#" class="black-text">Food</a></li>
-                    <li><a href="#" class="black-text">Home</a></li>
+                    <li><a href="./food.html" class="black-text">Food</a></li>
+                    <li><a href="./home.html" class="black-text">Home</a></li>
                  </ul>
               </div>
            </nav>
@@ -44,28 +40,28 @@
         <div class="row">
             <form class="col s6 m6 l6">
                 <div class="row">
-                    <div class="input-field col s6 m6 l6">
+                    <div class="input-field">
                         <input placeholder="18 years old" id="age" type="number" class="active validate" required/>
                         <label for="age">Age</label>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="input-field col s6 m6 l6">      
+                    <div class="input-field">      
                         <label for="weight">Weight</label>
                         <input id="weight" type="number" placeholder="110 lbs" class="validate" required/>          
                      </div>
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s6 m7 l6">      
+                    <div class="input-field">      
                         <label for="height">Height</label>
                         <input id="height" type="text" placeholder="5'2" class="validate" required/>          
                      </div>
                 </div>
 
                 <div class="row">
-                    <div class="col s6 m6 l6">
+                    <div>
                         <label for="gender">Gender</label>
                         <p>
                             <input id="male" type="radio" name="gender" value="male" checked/>
@@ -73,21 +69,25 @@
                               <input id="female" type="radio" name="gender" value="female" checked/>
                               <label for="female">Female</label>
                         </p>
-                    </div>
+                    </div><br>
                 </div>           
                 
                 <div class="row">
-                   <div class="input-field col s6 m6 l6">
+                   <div class="input-field">
                       <input placeholder="Running, Swimming, Biking, etc." id="exercise" type="text" class="validate" required/>
                       <label for="exercise">Exercise</label>
                    </div>
                 </div>
     
+                <div class="row center-align">
+                  <div class="input-field">   
+                  <button class="btn" id="exerciseBtn">Submit</button>
+                </div>
             </form>       
         </div>
     </div>
 
-    <footer class="page-footer yellow">    
+    <footer class="page-footer yellow" style="position:fixed;bottom:0;left:0;width:100%;">    
         <div class="footer-copyright black-text">
             <div class="container">
               © 2020 Copyright Information
