@@ -87,20 +87,39 @@ $(function () {
             q =   `${activity + ' ' + duration[i]}` 
             g = gender
             
+            // class QueryParms {
+                 
+            //         query = query;
+            //         gender = gender;
+            //         weight_kg = weight_kg;
+            //         height_cm = height_cm;
+            //         age = age;
+                
+                
+
+            // }
+
+            // const queryParms = new QueryParms(q, g,weight_kg, height_cm,age);
+            // JSON.stringify(queryParms);
+
+            // JSON.stringify()
+
             const userQuery = {
                 query:q,
                 gender: g,
                 weight_kg: weight_kg,
                 height_cm: height_cm,
                 age: Number(age),
-                toString(){
-                    return `{ query: "${this.query}", gender: "${this.gender}", weight_kg: ${this.weight_kg}, height_cm: ${this.height_cm}, age: ${this.age}}`;
-                }
+            
                 
               };
            // let userQuery = `"query" : '${q}' , "gender": '${g}', "weight":${weight_kg}, "height":${height_cm}, "age":${age}`
             console.log(userQuery);
-            const userQueryS = JSON.stringify({userQuery});
+            let userQueryS = JSON.stringify(userQuery, ["query", "gender", "weight_kg", "height_cm", "age"]);
+            console.log(userQueryS)
+
+
+         //   let userQuery = `"query" : ${q} , "gender": ${g}, "weight":${weight_kg}, "height":${height_cm}, "age":${age}`
 
             try {
                 var settings = {
@@ -117,9 +136,9 @@ $(function () {
                     },
 
                     // ------ this is hard coded parameters. replace with actual data
-                  
-                   "data": JSON.stringify({userQueryS}),
-                   // "data": JSON.stringify({userQuery}),
+                  //  "data": JSON.stringify({"query":'Weight lifting 60 min' , "gender": 'male', "weight":248.114824, "height":167, "age":44}),
+                   
+                    "data": userQueryS,
                     //"data": JSON.stringify({"query":'Weight lifting 60 min' , "gender": 'male', "weight":248.114824, "height":167, "age":44}),
                     // "data": JSON.stringify({
                     //     "query": `${userQuery}`,
@@ -157,17 +176,17 @@ $(function () {
        // getCalReport(0);
 
         try {
-            getCalReport(0);
+         //  getCalReport(0);
             // getCalReport(1);
             // getCalReport(2);
             // getCalReport(3);
            // getCalReport3() ;
-            // for (i=0; i< 4; i++){
-            //     getCalReport(i);
+            for (i=0; i< 4; i++){
+                getCalReport(i);
                 
                
         
-            //     }
+                }
             
 
         
