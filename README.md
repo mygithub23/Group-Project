@@ -15,13 +15,13 @@ Whichever type of user you are, let this application help provide you with the c
 * Remington
     * HTML
     * CSS
-    * PowerPoint
     * Application Design
 
 * Mary
     * HTML
     * CSS
     * Application Design
+    * PowerPoint
 
 * Ali
     * Team Lead
