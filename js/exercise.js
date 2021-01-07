@@ -33,17 +33,7 @@ $(function () {
     }
 
 
-
-
-    // $('#exerciseActivity').on('change',function(){
-    //     //var optionValue = $(this).val();
-    //     //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-    //     exerciseActivity = $("#dropdownList option:selected").text();
-    //     alert("Selected Option Text: "+ exerciseActivity);
-    // });
-
-    exerciseBtn.addEventListener('click', (e) => {
-
+    function getCalReport(i){
         let age = 0;
         let weight_lb = 0;
         let height_ft = 0;
@@ -79,9 +69,9 @@ $(function () {
 
 
 
-        weight_kg = weight_lb * 0.453592 // convert lbs to kg
+        weight_kg = Math.round(weight_lb * 0.453592) // convert lbs to kg
         //height_cm = height_in * 2.54 // convert inches to cm
-        height_cm = height_ft * 30.48 // convert feet and inches to cm
+        height_cm = Math.round(height_ft * 30.48) // convert feet and inches to cm
 
         // class Duration {
         //     constructor(d1, d2, d3, d4){
@@ -93,30 +83,25 @@ $(function () {
         //     }
             
 
-        // // let duration_30 = '30 min';
-        // // let duration_60 = '60 min';
-        // // let duration_90 = '90 min';
-        // // let duration_120 = '120 min';
-        // let activity_duration = new Duration ('30 min','60 min','90 min','120 min')
-        // console.log(activity_duration.duration_120)
-
-        
-
-        try {
-           
-            
-        } catch (error) {
-            alert(error)
-            
-        }
-        for (i=0; i< 4; i++){   
-
             // q = ${activity} ${duration[i]}
             q =   `${activity + ' ' + duration[i]}` 
             g = gender
-
-            let userQuery = `"query" : '${q}' , "gender": '${g}', "weight":${weight_kg}, "height":${height_cm}, "age":${age}`
+            
+            const userQuery = {
+                query:q,
+                gender: g,
+                weight_kg: weight_kg,
+                height_cm: height_cm,
+                age: Number(age),
+                toString(){
+                    return `{ query: "${this.query}", gender: "${this.gender}", weight_kg: ${this.weight_kg}, height_cm: ${this.height_cm}, age: ${this.age}}`;
+                }
+                
+              };
+           // let userQuery = `"query" : '${q}' , "gender": '${g}', "weight":${weight_kg}, "height":${height_cm}, "age":${age}`
             console.log(userQuery);
+            const userQueryS = JSON.stringify({userQuery});
+
             try {
                 var settings = {
                     "url": "https://trackapi.nutritionix.com/v2/natural/exercise",
@@ -131,8 +116,10 @@ $(function () {
                         "Cache-Control": "no-cache"
                     },
 
-                    // ------ this is hard coded parameters. replace with actual data 
-                    "data": JSON.stringify({"query":"ran 3 miles","gender":"female","weight_kg":72.5,"height_cm":167.64,"age":30}),
+                    // ------ this is hard coded parameters. replace with actual data
+                  
+                   "data": JSON.stringify({userQueryS}),
+                   // "data": JSON.stringify({userQuery}),
                     //"data": JSON.stringify({"query":'Weight lifting 60 min' , "gender": 'male', "weight":248.114824, "height":167, "age":44}),
                     // "data": JSON.stringify({
                     //     "query": `${userQuery}`,
@@ -145,15 +132,65 @@ $(function () {
                     data1 = response;
                     console.log(data1);
                     console.log(data1.exercises[0].nf_calories);
-                    console.log("Total Calories: " + data1.exercises[0].nf_calories)
-                    totalCalToBurn[i]= data1.exercises[0].nf_calories
+                    console.log("Total Calories: " + data1.exercises[0].nf_calories);
+                    totalCalToBurn[i]= data1.exercises[0].nf_calories;
+                    $(`<li id='${i}' class='active-slide'></li>`).appendTo("#exerciseReport");
+                    $(`<button class='${i} btn btn-primary btn-lg btn-block' id='${i}'></button>`).appendTo(`#${i}`)
+                    $(`.${i}`).append("For " + JS_Exercise[i].duration[i] + " You will burn Total Calories: " + data1.exercises[0].nf_calories)
                 });
 
             } catch (error) {
                 alert(error)
             }
+        
+        console.log(totalCalToBurn);
+        
+    }
+
+
+
+    
+    
+// Submit Event
+    exerciseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+       // getCalReport(0);
+
+        try {
+            getCalReport(0);
+            // getCalReport(1);
+            // getCalReport(2);
+            // getCalReport(3);
+           // getCalReport3() ;
+            // for (i=0; i< 4; i++){
+            //     getCalReport(i);
+                
+               
+        
+            //     }
+            
+
+        
+        } catch (error) {
+            alert(error)
         }
+        
+        try {
+            // for (i=0; i< 4; i++){
+            // $(`<li id='${i}' class='active-slide'></li>`).appendTo("#exerciseReport");
+            // $(`<button class='${i} btn btn-primary btn-lg btn-block' id='${i}'></button>`).appendTo(`#${i}`)
+            // $(`.${i}`).append(JS_Exercise[i] + "Total Calories: " + data1.exercises[0].nf_calories)
+            // }
+    
+          //  getExerciseReport();
+        } catch (error) {
+            console.log(error);
+        }
+        
+        
 
     })
+
+
 
 })
