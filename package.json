@@ -1,17 +1,41 @@
 {
-  "name": "nutrition-label-jquery-plugin",
-  "version": "11.0.4",
-  "description": "To be able to create a FDA-style nutrition label with any nutrition data source",
-  "main": "nutritionLabel-min.js",
+  "_from": "nutrition-label-jquery-plugin",
+  "_id": "nutrition-label-jquery-plugin@11.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-htQf8ykup1IpeLsz9+nABKVgM3zBX1Vil084KTA0naU7YGNkDmVN6ocrMpFXZZJmpZICNroM4oSM1Sh1SFqbyw==",
+  "_location": "/nutrition-label-jquery-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nutrition-label-jquery-plugin",
+    "name": "nutrition-label-jquery-plugin",
+    "escapedName": "nutrition-label-jquery-plugin",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nutrition-label-jquery-plugin/-/nutrition-label-jquery-plugin-11.0.4.tgz",
+  "_shasum": "fea268d813b63e062867c6adaaf192ffbfbee528",
+  "_spec": "nutrition-label-jquery-plugin",
+  "_where": "D:\\Documents\\_GW\\__Homework\\_Assignments\\Project-1\\Nutrition Label jQuery Plugin by Nutritionix\\tesst",
+  "author": {
+    "name": "Leo Joseph Gajitos",
+    "email": "leejay22@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/nutritionix/nutrition-label/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {},
+  "deprecated": false,
+  "description": "To be able to create a FDA-style nutrition label with any nutrition data source",
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nutritionix/nutrition-label.git"
-  },
+  "homepage": "https://github.com/nutritionix/nutrition-label#readme",
   "keywords": [
     "nutrition",
     "nutrition-label",
@@ -22,10 +46,15 @@
     "label",
     "food-label"
   ],
-  "author": "Leo Joseph Gajitos <leejay22@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nutritionix/nutrition-label/issues"
+  "main": "nutritionLabel-min.js",
+  "name": "nutrition-label-jquery-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nutritionix/nutrition-label.git"
   },
-  "homepage": "https://github.com/nutritionix/nutrition-label#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "11.0.4"
 }
