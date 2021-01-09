@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BELLY Budget: Exercise</title>
-    <!--LINKING MATERIALIZE CSS FRAMEWORK-->
+    <!--LINKING CSS FRAMEWORK-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -28,83 +28,71 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col s6 m6 l6">
-            <div class="calories-to-burn center-align grey lighten-1">
-                <h1>Calories to Burn</h1>
-                <h2>1000 calories</h2>
+    <main class="container">
+        <div class="row">
+            <div class="col s6 m6 l6">
+                <div class="input-field">
+                    <input placeholder="18 years old" id="age" type="number" class="active validate" required />
+                    <label for="age">Age</label>
+                </div>
             </div>
-
-            <div class="time center-align grey lighten-1">
-                <h1>Time to Exercise</h1>
-                <h2>20 minutes</h2>
-                <ul id="exerciseReport"></ul>
-            </div>            
+            <div class="col s6 m6 l6">
+                <label for="gender">Gender</label>
+                <p>
+                    <input id="male" type="radio" name="gender" value="male" checked /><label for="male">Male</label><input id="female" type="radio" name="gender" value="female" checked /><label for="female">Female</label>
+                </p>
+            </div>
         </div>
 
-       
-            <form class="col s6 m6 l6">
-                <div class="row">
-                    <div class="input-field">
-                        <input placeholder="18 years old" id="age" type="number" class="active validate" required />
-                        <label for="age">Age</label>
-                    </div>
+        <div class="row">
+            <div class="col s6 m6 l6">
+                <div class="input-field">
+                    <label for="weight">Weight</label>
+                    <input id="weight" type="number" placeholder="110 lbs" class="validate" required />
                 </div>
+            </div>
+            <div class="col s6 m6 l6">
+                <div class="input-field">
+                    <label for="height">Height</label>
+                    <input id="height" type="text" placeholder="5'2" class="validate" required />
+                </div>  
+            </div>
+        </div>
 
-                <div class="row">
-                    <div class="input-field">
-                        <label for="weight">Weight</label>
-                        <input id="weight" type="number" placeholder="110 lbs" class="validate" required />
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <label for="exercise">Exercise</label><br>
+                <select class="custom-select" id="activities">
+                    <option id='run' value="running">Running</option>
+                    <option id='stretch' value="stretching">Stretching</option>
+                    <option value="weight lifting">Weight lifting</option>
+                    <option value="yoga">Yoga</option>
+                    <option value="jumping rope">Jumping rope</option>
+                    <option value="bicycling">Bicycling</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="walking">Walking</option>
+                </select>
+            </div>
+        </div>
 
-                <div class="row">
-                    <div class="input-field">
-                        <label for="height">Height</label>
-                        <input id="height" type="text" placeholder="5'2" class="validate" required />
-                    </div>
+        <div class="row center-align">
+            <div class="col s12 m12 l12">
+                <div class="input-field center-align">
+                    <button class="btn" id="exerciseBtn">Submit</button>
+                    <button class="btn" onClick="window.location.reload();">Start Over</button>
                 </div>
+            </div>
+        </div>
 
-                <div class="row">
-                    <div>
-                        <label for="gender">Gender</label>
-                        <p>
-                            <input id="male" type="radio" name="gender" value="male" checked />
-                            <label for="male">Male</label>
-                            <input id="female" type="radio" name="gender" value="female" checked />
-                            <label for="female">Female</label>
-                        </p>
-                    </div><br>
-                </div>
-                
+        <hr><hr>
 
-                <div class="row">
-                    <div>
-                        <select class="custom-select" id="activities">
-                            <option id='run' value="running">Running</option>
-                            <option id='stretch' value="stretching">Stretching</option>
-                            <option value="weight lifting">Weight lifting</option>
-                            <option value="yoga">Yoga</option>
-                            <option value="jumping rope">Jumping rope</option>
-                            <option value="bicycling">Bicycling</option>
-                            <option value="swimming">Swimming</option>
-                            <option value="walking">Walking</option>
-                        </select>
-                       
-                    </div>
-                   
-                </div>
-            
-                
-                <div class="row center-align">
-                    <div class="input-field">
-                        <button class="btn" id="exerciseBtn">Submit</button>
-                </div>
-            </form>
-                  
-                
-        
-    </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <ul id="exerciseReport"></ul>
+            </div>
+        </div>
+    </main>
+
 
     <footer class="page-footer yellow" style="position:fixed;bottom:0;left:0;width:100%;">
         <div class="footer-copyright black-text">
