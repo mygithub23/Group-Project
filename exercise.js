@@ -27,7 +27,7 @@ $(function () {
             $(`<li id='${i}' class='active-slide'></li>`).appendTo("#exerciseReport");
             $(`<button class='${i} btn btn-primary btn-lg btn-block' id='${i}'></button>`).appendTo(`#${i}`)
             $(`.${i}`).append(JS_Questions[arrayIndex].exerciseReport[i])
-
+        
 
         }
     }
@@ -147,12 +147,10 @@ $(function () {
            // getCalReport3() ;
             for (i=0; i< 4; i++){
                 getCalReport(i);
-                
                
         
                 }
             
-
         
         } catch (error) {
             alert(error)
@@ -173,7 +171,7 @@ $(function () {
         
 
     })
-
+    
 
 
 })
